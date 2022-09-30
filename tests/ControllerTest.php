@@ -52,7 +52,9 @@ class ControllerTest extends TestCase
 
         $model = $m;
 
-        $this->assertNull($model, 'Model initialized as null');
+        $model_output = $controller->setModel($m);
+
+        $this->assertNull($model_output, 'Model initialized as null');
 
     }
 
@@ -68,8 +70,11 @@ class ControllerTest extends TestCase
 
         $view = $v;
 
+        $view_output = $controller->setView($v);
 
-        $this->assertNull($v, 'The model is expected to be initialized as null');
+        $this->assertNull($view_output, 'View initialized as null');
+
+        //$this->assertNull($v, 'The model is expected to be initialized as null');
     }
     
 }

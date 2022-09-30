@@ -26,6 +26,7 @@ class ViewTest extends PHPUnit\Framework\TestCase
         //$this->assertIsObject($view);
         $this->assertEquals(get_class($this->view), 'View', 'View object creation failed');
 
+
     }
 
     /** @test */

@@ -16,11 +16,8 @@ class ConcreteControllerClass extends Controller {
 
     public function setView(View $v) 
     {
-        $extension = "View";
-        $viewObject = MYFRAMEWORK.$v.$extension;
-        $this->view = new $viewObject($v);  //create a new view class object
+        $this->view =  $v;  //create a new view class object
 
-        return $this->view;
     }
 
 

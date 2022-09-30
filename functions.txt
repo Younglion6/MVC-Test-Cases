@@ -1,0 +1,10 @@
+ abstract public function getAll(): array
+    {
+        // get the contents of the JSON file
+        $strJsonFileContents = file_get_contents("file-name-example");
+
+        // convert to array
+        $array - json_decode($strJsonFileContents, true);  //decode the JSON into an associative array
+
+        print($array);  //print array
+    }

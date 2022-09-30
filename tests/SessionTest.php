@@ -63,7 +63,7 @@ class SessionTest extends TestCase
 
         $this->assertTrue($condition, 'End Session');
 
-        
+        echo 'hello';
     }
 
     public function test_remove() 

@@ -41,20 +41,22 @@ class ControllerTest extends TestCase
     }
 
 
-    /** @test */
-    public function test_setModel(): Void 
-    {
-        $controller = new ConcreteControllerClass();    //create new controller object
-
-        $model = $this->getPrivateProperty( 'Controller', 'model'); //gets the private property $model from Controlller class
-        
-        $m = new ConcreteModelClass();
-
-        $model = $m;
-
-        $this->assertNull($model, 'Model initialized as null');
-
-    }
+     /** @test */
+     public function test_setModel(): Void 
+     {
+         $controller = new ConcreteControllerClass();    //create new controller object
+ 
+         $model = $this->getPrivateProperty( 'Controller', 'model'); //gets the private property $model from Controlller class
+         
+         $m = new ConcreteModelClass();
+ 
+         $model = $m;
+ 
+         $model_output = $controller->setModel($m);
+ 
+         $this->assertNull($model_output, 'Model initialized as null');
+ 
+     }
 
     /** @test */
     public function test_setView(): void 
@@ -68,8 +70,10 @@ class ControllerTest extends TestCase
 
         $view = $v;
 
+        $view_output = $controller->setView($v);
 
-        $this->assertNull($v, 'The model is expected to be initialized as null');
+        $this->assertNull($view_output, 'View initialized as null');
+
     }
     
 }

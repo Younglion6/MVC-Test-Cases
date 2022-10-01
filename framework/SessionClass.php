@@ -17,6 +17,7 @@ class SessionClass {
     {
         session_destroy();
     }
+    
 
     public function add ($name, $value) 
     {

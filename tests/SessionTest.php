@@ -29,34 +29,20 @@ class SessionTest extends TestCase
         $this->assertEquals(get_class($this->session), 'SessionClass', 'Session object creation failed');
     }
 
-    /** @test */
-    public function test_add() 
-    {
 
 
-        $session_arr = [];
+     /** @test */
+     public function test_create(): void 
+     {
         
-        $name = "Session-1";
-        $value = "Stop";
-
-        $session_arr[$name] = $value;
-
-        $this->assertContains($value, $session_arr, 'Value doesnt exist in Session');
-
-    }
+         $condition = false;
+ 
+         $this->assertFalse($condition, 'Start Session');
+ 
+     }
 
 
-    /** @test */
-    public function test_create(): void 
-    {
-       
-        $condition = false;
-
-        $this->assertFalse($condition, 'Start Session');
-
-    }
-
-    /**@test */
+     /**@test */
     public function test_destroy()
     {
         $condition = true;
@@ -65,6 +51,28 @@ class SessionTest extends TestCase
 
         echo 'hello';
     }
+
+
+
+    /** @test */
+    public function test_add() 
+    {
+
+        $session_arr = ["name" => [
+                            "type"  => "string",
+                            "maxlength" => "30",]];      //session array
+        
+        $name = "session-name";    // variable name $name 
+        $value = "session-value";   
+
+        
+        $value_added = $session_arr[$name] = $value;  //add varible named $name with $value variable to session array
+
+        $this->assertContains($value_added, $session_arr, 'Value doesnt exist in Session');
+
+    }
+
+
 
     public function test_remove() 
     {

@@ -76,17 +76,17 @@ class SessionTest extends TestCase
 
     public function test_remove() 
     {
+        //use an array to support session management for testing purposes
+        $session_arr = ["name" => [
+                        "type"  => "string",
+                        "maxlength" => "30",]
+                        ];      //session array
 
-        $sessionArray = array();    //Session array 
+        $name = "session-name";    // variable name $name 
 
-        $name = 'Login';    //$name 
-
-
-        array_push ($sessionArray, $name);
-
-        $this->assertContains($name, $sessionArray, 'Session $name not found');
-
-
+        unset($session_arr[$name]);   //remove $name from session array
+ 
+        $this->assertNotContains($name, $session_arr, 'Session $name not found');
 
     }
 

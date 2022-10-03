@@ -14,7 +14,7 @@ class ConcreteModelClass extends Model
     public function getAll() : array
     {
         // read the json file 
-        $json = file_get_contents('C:\xampp\htdocs\413001842\data/users.json');
+        $json = file_get_contents('./data/users.json');
 
         // decode the json file
         $json_data = json_decode($json, true);
@@ -27,7 +27,7 @@ class ConcreteModelClass extends Model
     public function getRecord(string $id): array
     {
         // read the json file 
-        $json = file_get_contents('C:\xampp\htdocs\413001842\data/users.json');
+        $json = file_get_contents('./data/users.json');
 
         // decode the json file
         $json_data = json_decode($json, true);

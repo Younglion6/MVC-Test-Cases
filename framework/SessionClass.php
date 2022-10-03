@@ -17,7 +17,7 @@ class SessionClass {
     {
         session_destroy();
     }
-    
+
 
     public function add ($name, $value) 
     {
@@ -49,8 +49,11 @@ class SessionClass {
         return null;
     }
 
-    public function accessible($user, $page)
+    public function accessible($user, $page): bool
     {
+
+     
+
 
                           
 

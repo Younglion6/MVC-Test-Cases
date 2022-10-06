@@ -20,7 +20,7 @@ class View  {
     {
 
         $this->tpl = $filename;
-        return $filename;
+        //return $filename;
         
     }
 

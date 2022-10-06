@@ -36,10 +36,10 @@ class ConcreteModelClass extends Model
 
         //return single database record 
         echo $json_data[$id];
+
     }
 }
     
-
 
 
     

@@ -51,12 +51,8 @@ class SessionClass {
 
     public function accessible($user, $page): bool
     {
-
-     
-
-
-                          
-
+        
+                        
     }
 }
 ?>

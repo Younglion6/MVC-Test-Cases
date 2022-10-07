@@ -35,9 +35,7 @@ class ConcreteControllerClass extends Controller {
     }
 
 
-    public function run() 
-    {
-
+    public function run() {
     }
 
 }

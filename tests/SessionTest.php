@@ -36,8 +36,12 @@ class SessionTest extends TestCase
      {
         
          $condition = false;
+
+         if($condition == false) {
+            $condition = true;
+         }
  
-         $this->assertFalse($condition, 'Start Session');
+         $this->assertTrue($condition, 'Falied to Start Session');
  
      }
 
@@ -45,11 +49,14 @@ class SessionTest extends TestCase
      /**@test */
     public function test_destroy()
     {
-        $condition = true;
+        $session = true;    //session storing true 
 
-        $this->assertTrue($condition, 'End Session');
+        if($session == true) {
+            $session = false;
+        }
+        $this->assertFalse($session, 'End Session');
 
-        echo 'hello';
+        
     }
 
 
@@ -58,15 +65,15 @@ class SessionTest extends TestCase
     public function test_add() 
     {
 
-        $session_arr = ["name" => [
-                            "type"  => "string",
-                            "maxlength" => "30",]];      //session array
-        
-        $name = "session-name";    // variable name $name 
-        $value = "session-value";   
+        $session_arr = ["name" => ''];
 
-        
+        $name = "session-name";    // variable name $name 
+        $value = "session-value";   //value stored in $name
+
+        if(!isset($session_arr[$name])) {
+
         $value_added = $session_arr[$name] = $value;  //add varible named $name with $value variable to session array
+        }
 
         $this->assertContains($value_added, $session_arr, 'Value doesnt exist in Session');
 
@@ -77,17 +84,15 @@ class SessionTest extends TestCase
     public function test_remove() 
     {
         //use an array to support session management for testing purposes
-        $session_arr = ["name" => [
-                        "type"  => "string",
-                        "maxlength" => "30",]
-                        ];      //session array
+        $session_arr = ['name' => 'session1'];      //session array
 
-        $name = "session-name";    // variable name $name 
+        $name = 'temp-session';     //session name $name
 
-        unset($session_arr[$name]);   //remove $name from session array
- 
+        if(isset($session_arr[$name])) {
+
+            unset($session_arr[$name]);   //remove $name from session array
+        }
         $this->assertNotContains($name, $session_arr, 'Session $name not found');
-
     }
 
 

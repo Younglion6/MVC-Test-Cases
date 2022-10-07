@@ -88,23 +88,7 @@ class ViewTest extends PHPUnit\Framework\TestCase
     }
 
 //WORK ON THIS TEST CASE 
-    public function test_addVar()
-    {
-
-        $view = new View();
-
-        $vars = ["name" => [
-            "type"  => "string",
-            "maxlength" => "30",]];      //session array
-
-        $name = "name";
-        $value = "login.tpl.php";
-
-
-        $output = $view->addVar($name, $value);
-
-        $this->assertContains($output, $vars, 'Value doesnt exist in template');
-    }
+    
 
     
 

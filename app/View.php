@@ -33,12 +33,10 @@ class View  {
 
     public function addVar(string $name, $value)
     {
-        if(is_object($value))        //if data is an object then fetch() the data.
-        {
-            $this->vars[$name] = $value->fetch();
-        } 
-
-        $this->vars[$name] = $value;     // else assign the value to the array
+        
+        $this->vars[$name] = $value;
+        
+        //$this->vars[$name] = $value;     // else assign the value to the array
     
     }
 }

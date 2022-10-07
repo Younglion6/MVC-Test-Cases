@@ -56,12 +56,14 @@ class ViewTest extends PHPUnit\Framework\TestCase
         //$this->assertIsString($output);
 
         $property = $this->getPrivateProperty( 'View', 'tpl');   //accessed the View class and private varible $tpl
+        //store accessed private property value in $property
 
-        $this->assertEquals( $property->getValue( $view ), $expectedValue);
+        $this->assertEquals( $property->getValue( $view ), $expectedValue);  //assert if expectedValue is equal to private value $tpl
 
         
     }
 
+    //function used to access provate properties using the Reflection Class
     public function getPrivateProperty( $className, $propertyName ) 
     {
         $reflector = new ReflectionClass( $className);
@@ -89,6 +91,24 @@ class ViewTest extends PHPUnit\Framework\TestCase
 
 //WORK ON THIS TEST CASE 
     
+    public function test_addVar() 
+    {
+        $view = new View();
+
+
+        //abitrary variables/ data to be added to vars for testing
+        $name = 'Index';
+        $value = 'index.tpl.php';
+
+
+        $addVar = $view->addVar($name, $value);
+
+        $property = $this->getPrivateProperty( 'View', 'vars');   //accessed the View class and private varible $tpl
+
+
+        $this->assertNotNull( $property->getValue( $view ));  //assert that vars array is not null 
+
+    }
 
     
 

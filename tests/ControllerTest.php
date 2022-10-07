@@ -48,13 +48,13 @@ class ControllerTest extends TestCase
  
          $model = $this->getPrivateProperty( 'Controller', 'model'); //gets the private property $model from Controlller class
          
-         $m = new ConcreteModelClass();
+         $m = new ConcreteModelClass();         //create new model object 
  
-         $model = $m;
+         $model = $m;   //stores model object $m in private property $model
  
          $model_output = $controller->setModel($m);
  
-         $this->assertNull($model_output, 'Model initialized as null');
+         $this->assertNull($model_output, 'Model initialized as null');     //assert if Model was is initialized as NULL
  
      }
 
@@ -62,17 +62,17 @@ class ControllerTest extends TestCase
     public function test_setView(): void 
     {
 
-        $controller = new ConcreteControllerClass();
+        $controller = new ConcreteControllerClass();       //create new Controller object
 
-        $v = new View();
+        $v = new View();    //create new View object
 
-        $view = $this->getPrivateProperty( 'Controller', 'view');
+        $view = $this->getPrivateProperty( 'Controller', 'view');       //use getPrivateProperty function to access provate variable $view
 
-        $view = $v;
+        $view = $v;     //store model object $v in private property $view
 
         $view_output = $controller->setView($v);
 
-        $this->assertNull($view_output, 'View initialized as null');
+        $this->assertNull($view_output, 'View initialized as null');    //asset of View was initialized as NULL
 
     }
     

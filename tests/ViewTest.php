@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-require __DIR__ . "/../app/View.php";
+//require __DIR__ . "/../framework/View.php";
 
 
 class ViewTest extends PHPUnit\Framework\TestCase
@@ -93,7 +93,7 @@ class ViewTest extends PHPUnit\Framework\TestCase
     
     public function test_addVar() 
     {
-        $view = new View();
+        $view = new View();     //create new View object
 
 
         //abitrary variables/ data to be added to vars for testing
@@ -103,10 +103,9 @@ class ViewTest extends PHPUnit\Framework\TestCase
 
         $addVar = $view->addVar($name, $value);
 
-        $property = $this->getPrivateProperty( 'View', 'vars');   //accessed the View class and private varible $tpl
+        $property = $this->getPrivateProperty( 'View', 'vars');   //accessed the View class and protcted array $vars
 
-
-        $this->assertNotNull( $property->getValue( $view ));  //assert that vars array is not null 
+        $this->assertNotNull( $property->getValue( $view ));  //assert that vars array is not empty and variable successfully added
 
     }
 

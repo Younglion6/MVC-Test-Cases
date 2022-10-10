@@ -1,13 +1,13 @@
 <?php
 
-abstract class Controller {
+abstract class Controller_Abstract {
 
     abstract protected function setModel(Model $m);
     abstract protected function setView(View $v);
     abstract protected function run();
 
-    protected $view;
-    protected $model;
+    protected $view = null;
+    protected $model = null;
 
 
 }
@@ -34,8 +34,6 @@ class ConcreteControllerClass extends Controller {
         return $this->model;
     }
 
-
-    public function run() {
-    }
+    
 
 }

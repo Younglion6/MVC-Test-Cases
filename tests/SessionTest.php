@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-require __DIR__ . "/../framework/SessionClass.php";
+//require __DIR__ . "/../framework/SessionClass.php";
 
 use PHPUnit\Framework\TestCase;
 

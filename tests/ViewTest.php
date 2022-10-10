@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-//require __DIR__ . "/../framework/View.php";
+require __DIR__ . "/../framework/View.php";
 
 
 class ViewTest extends PHPUnit\Framework\TestCase

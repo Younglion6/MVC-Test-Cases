@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-//require __DIR__ . "/../framework/SessionClass.php";
+require __DIR__ . "/../framework/SessionManager.php";
 
 use PHPUnit\Framework\TestCase;
 
@@ -13,7 +13,7 @@ class SessionTest extends TestCase
 
     public function setUp() : void 
     {
-        $this->session = new SessionClass();
+        $this->session = new SessionManager();
     }
 
     public function tearDown() : void 
@@ -26,7 +26,7 @@ class SessionTest extends TestCase
     public function test_valid_session_class_object() : void
     {
 
-        $this->assertEquals(get_class($this->session), 'SessionClass', 'Session object creation failed');
+        $this->assertEquals(get_class($this->session), 'SessionManager', 'Session object creation failed');
     }
 
 

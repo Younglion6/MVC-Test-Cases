@@ -1,5 +1,5 @@
 <?php
-class IndexModel extends Obserable_Model
+class IndexModel extends Observable_Model
 {
     public function getAll(): array 
     {

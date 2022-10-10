@@ -1,6 +1,6 @@
 <?php
 
-abstract class Controller_Abstract {
+abstract class Controller {
 
     abstract protected function setModel(Model $m);
     abstract protected function setView(View $v);
@@ -34,6 +34,9 @@ class ConcreteControllerClass extends Controller {
         return $this->model;
     }
 
-    
+    public function run()
+    {
+        
+    }
 
 }

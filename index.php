@@ -1,6 +1,6 @@
 <?php
 
-require 'autoloader';
+require 'autoload.php';
 
-$controller = new indexController();
+$controller = new IndexController();
 $controller->run();

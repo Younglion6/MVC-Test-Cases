@@ -1,9 +1,11 @@
 <?php 
 
-class SessionClass {
+class SessionManager 
+{
+    protected $access = ['profile'=>['testuser', 'jonno', 'tara']];
+
     function __construct() 
     {
-
     }
 
     public function create() 
@@ -51,7 +53,10 @@ class SessionClass {
 
     public function accessible($user, $page): bool
     {
-        
+        if(in_array($user, $this->access[$page])) {
+            return true;
+        }
+        return false;
                         
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-class View implements Observer_Interface
+class View //implements Observer_Interface
 {
 
     private $tpl = '';                         // this will hold the name of the tpl file to open i.e the body of the webpage

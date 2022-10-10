@@ -1,5 +1,5 @@
 <?php
-abstract class Obserable_Model extends Model implements Obserable_Interface
+abstract class Obserable_Model extends Model implements Observer_Interface
 {
     protected $observers = [];
 

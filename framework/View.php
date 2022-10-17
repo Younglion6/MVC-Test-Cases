@@ -1,7 +1,6 @@
 <?php
 
-
-class View //implements Observer_Interface
+class View implements Observer_Interface
 {
 
     private $tpl = '';                         // this will hold the name of the tpl file to open i.e the body of the webpage
@@ -20,17 +19,17 @@ class View //implements Observer_Interface
     }
 
 
-    public function display(): String 
+    public function display()
     {
-        extract($this->data);
-        return $this->tpl;
+        extract($this->vars);
+        require $this->tpl;
     }
 
 
     public function addVar(string $name, $value)
     {
         // checks for valid variable name 
-        if (preg_match('/^[a-zA-Z_\x80-\xff][a-zA-z0-9_\80-\xff]*$/', $name) == 0) {
+        if (preg_match('/^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$/', $name) == 0) {
             trigger_error('Invalid varibale name used', E_USER_ERROR);
         }
         $this->vars[$name] = $value;     // else assign the value to the array

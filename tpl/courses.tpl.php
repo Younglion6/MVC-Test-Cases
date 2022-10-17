@@ -1,41 +1,308 @@
-<main>
-		<h1><?php echo $title ?></h1>
+<!DOCTYPE html>
+<html lang="en-GB">
+	<head>
+		<title>Quwius</title>
+		<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<nav>
+			<a href="#"><img src="images/logo.png" alt="UWI online"></a>
+			<ul>
+				<li><a href="index.php?controller=Courses">Courses</a></li>
+				<li><a href="index.php?controller=Streams">Streams</a></li>
+				<li><a href="index.php?controller=AboutUs">About Us</a></li>
+				<li><a href="index.php?controller=Login">Login</a></li>
+				<li><a href="index.php?controller=SignUp">Sign Up</a></li>
+			</ul>
+		</nav>
+		<main>
+		<h1>Courses</h1>
 		<ul class="course-list">
-
-			<?php if($userdata['role']=='admin'): ?>
-				<a href="#" id="addCourse">Add Course</a>
-				<br>
-			<?php endif; ?>
-
-
-			<?php foreach($courses as $key): ?>
 			<li><div>
-				<a href="#"><img src="<?php echo "../../images/".$key['course_image']?>" alt="course image"></a>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
 				</div>
 				<div>
-				<a href="#"><span class="faculty-department"><?php echo $key['faculty_dept_name'] ?></span>
-					<span class="course-title"><?php echo $key['course_name'] ?></span>
-					<span class="instructor"><?php echo $key['instructor_name'] ?></span></a>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
 				</div>
 				<div>
-					<?php if($userdata['role']=='admin'): ?>
-						<a href="/courses/delete/<?php echo $key['course_id']?>" class="deletebtn">Delete Course</a>
-					<?php endif; ?>
-				<?php if($userdata['role']!='admin'): ?>
 					<p>Get Curious.</p>
-				<?php endif; ?>
-						<?php if($userdata['role']!='admin'): ?>
-					<a href="/profile/start/<?php echo $key['course_id']?>" class="startnow-button startnow-btn">Start Now!</a>
-								<?php endif; ?>
-				<?php if($userdata['role']=='admin'): ?>
-					<a href="#" class="startnow-button startnow-btn">Edit Course</a>
-				<?php endif; ?>
-
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
 				</div>
-				</li>
-			<?php endforeach; ?>
-
-
-
-
+			</li>
+			<li><div>
+				<a href="#"><img src="images/mathematics.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
+			<li><div>
+				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				</div>
+				<div>
+				<a href="#"><span class="faculty-department">Faculty or Department</span>	
+					<span class="course-title">Course Title</span>
+					<span class="instructor">Course Instructor</span></a>
+				</div>
+				<div>
+					<p>Get Curious.</p>
+					<a href="#" class="startnow-button startnow-btn">Start Now!</a>
+				</div>
+			</li>
 		</ul>
+			<footer>
+				<nav>
+					<ul>
+						<li>&copy;2015 Quwius Inc.</li>
+						<li><a href="#">Company</a></li>
+						<li><a href="#">Connect</a></li>
+						<li><a href="#">Terms &amp; Conditions</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</main>
+	</body>
+</html>

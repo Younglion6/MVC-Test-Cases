@@ -1,18 +1,11 @@
 <?php
 
-abstract class Controller {
-
-    abstract protected function setModel(Model $m);
-    abstract protected function setView(View $v);
-    abstract protected function run();
+abstract class Controller
+{
 
     protected $view = null;
     protected $model = null;
 
-
-}
-
-class ConcreteControllerClass extends Controller {
 
     public function setView(View $v) 
     {
@@ -22,21 +15,12 @@ class ConcreteControllerClass extends Controller {
     }
 
 
-    public function setModel(Model $m)
+    public function setModel(Observable_Model $m)
     {
         $this->model = $m;
         
     }
 
-
-    public function getModel() : Model          //return the Model object
-    {
-        return $this->model;
-    }
-
-    public function run()
-    {
-        
-    }
+    abstract public function run();
 
 }

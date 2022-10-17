@@ -1,48 +1,31 @@
 <?php
 
 
-class coursesController extends Controller {
-
-public function __construct()
+class CoursesController extends Controller 
 {
-  $this->makeModel('coursesModel'); //make the coursesModel
-}
 
-public function index()
-{
-  $view = $this->makeView('courses'); //make the view object and store it in the @view variable
-  $model = $this->getModel(); //store the model in the $model varibale for optional queries
-  $view->setModel($model); //set the model in the view to retrieve or modify any data.
-  $view->run();
-}
+  public function run()
+    {
+        //create the view object
+        $v = new View();
+        $v->setTemplate(TPL_DIR . '/courses.tpl.php');
 
-public function edit()
-{
-  $user = Registry::get('user');
-  $view =$this->makeView("courses");
-  $model = $this->getModel();
-  $auth = Registry::get('Auth');
-  $hasPermission = $auth->authenticate($user,'dashboard');
+        //set the model and the view
+        $this->setModel(new CoursesModel());
+        $this->setView($v);
 
- if($hasPermission == true)
- {
-   $view->setModel($model);
-   $view->run();
- }
- else {
-   header('Location: /home');
- }
-}
+        $this->model->attach($this->view);
+        
+        $data = $this->model->getAll();
 
-public function delete($data)
-{
-  echo " course id to be deleted is ".$data;
-  $view =$this->makeView("courses");
-  $model = $this->getModel();
-  $view->setModel($model);
-  $view->run();
+        $this->model->updateThechangedData($data);
 
-}
+        //tell the model to contact other 
+        $this->model->notify();
+    }
+
+
+ 
 
 
 } //end coursesController

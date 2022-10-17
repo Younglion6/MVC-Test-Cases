@@ -4,11 +4,8 @@ class SessionManager
 {
     protected $access = ['profile'=>['testuser', 'jonno', 'tara']];
 
-    function __construct() 
-    {
-    }
 
-    public function create() 
+    public static function create() 
     {
         if(!isset($_SESSION)) {
             session_start();
@@ -23,12 +20,12 @@ class SessionManager
 
     public function add ($name, $value) 
     {
-        if(!isset($_SESSION[$name])) {
-            $_SESSION[$name] = $value;
-        }
-        else {
-            echo "Value arealdy existing";
-        }
+        // check to make sure the variable name is valid
+		if (preg_match('/^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$/', $name) == 0) {
+			trigger_error('Invalid variable name used', E_USER_ERROR);
+		}
+		$_SESSION[$name] = $value;
+        
     }
 
 
@@ -37,9 +34,6 @@ class SessionManager
         if(isset($_SESSION[$name])) {
             unset($_SESSION[$name]);
         } 
-        else {
-            echo "Not  found";
-        }
     }
 
 

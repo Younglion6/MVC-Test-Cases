@@ -7,10 +7,10 @@ class ProfileController extends Controller
         SessionManager::create();
 
         $sess = new SessionManager();
-
+        $sess->remove('user');
         //create the model object
         $v = new View();
-        $v->setTemplate(TPL_DIR . 'index.tpl.php');
+        $v->setTemplate(TPL_DIR . '/profile.tpl.php');
 
         //set the model and the view
         $this->setModel(new ProfileModel());
@@ -33,8 +33,5 @@ class ProfileController extends Controller
             $v->setTemplate(TPL_DIR . '/login.tpl.php');
             $v->display();
         }
-        
-
-
     }
 }
